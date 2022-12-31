@@ -1,0 +1,10 @@
+.disable_cancel {
+  pointer-events: none;
+  background-color: #d48a8a;
+  border-color: #d48a8e;
+  color: whitesmoke;
+}
+
+.enable_cancel {
+  pointer-events: all;
+}

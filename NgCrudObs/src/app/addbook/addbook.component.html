@@ -1,0 +1,147 @@
+<div class="main-top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="text-slid-box">
+          <a class="navbar-brand" href="#">
+            <h4>Turn A Page With Us</h4>
+          </a>
+        </div>
+      </div>
+      <div class="right-phone-box">
+        <p>Call US :- <a href="#"> +91 1234567890</a></p>
+      </div>
+      <div class="our-link">
+        <ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+             data-toggle="dropdown" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" style="background-color: black;">
+              <a class="dropdown-item" (click)="showProfileDetails()">Profile</a>
+              <a class="dropdown-item">Sign Out</a>
+            </div>
+          </li>
+          <li><a href="#">Our location</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <a class="navbar-brand"><img src="assets/images/logo3.png" class="logo" alt=""></a> -->
+
+          <h3>ONLINE BOOK STORE</h3>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+            <li class="nav-item active"><a class="nav-link" (click)="goToDash()">Home</a></li>
+            <li class="nav-item"><a class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Books
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="goToDash()">All Books</a>
+                <a class="dropdown-item">Add Book Details</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Stores
+              </a>
+              
+            </li>
+            <li class="nav-item"><a class="nav-link">Orders</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<div id="booking" class="section">
+  <div class="section-center">
+    <div class="container">
+      <div class="row">
+        <div class="booking-form">
+          <form>
+            <div class="row no-margin">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <span class="form-label">Title</span>
+                  <input class="form-control" type="text" required [(ngModel)]="book.title" name="title">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <span class="form-label">Author</span>
+                  <input class="form-control" type="text" required [(ngModel)]="book.author" name="author">
+                </div>
+              </div>
+            </div>
+            <div class="row no-margin">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <span class="form-label">Price Per Book</span>
+                  <input class="form-control" type="text" required [(ngModel)]="book.price" name="price">
+                </div>
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <span class="form-label">No Of Copies Available</span>
+              <input class="form-control" type="number" required [(ngModel)]="book.no_copies" name="no_copies">
+            </div>
+            <div class="form-group">
+              <span class="form-label">Availability</span>
+              <select class="form-control" required [(ngModel)]="book.availability" name="available">
+                <option value="" selected hidden>Select Availability</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+              <span class="select-arrow"></span>
+            </div>
+            <div class="form-group">
+              <span class="form-label">Category</span>
+              <select class="form-control" required [(ngModel)]="book.category" name="category">
+                <option value="" selected hidden>Select Book Category</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Horror">Horror</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Western">Western</option>
+              </select>
+              <span class="select-arrow"></span>
+            </div>
+            <!-- <div>
+              <span class="form-label">Upload Image</span>
+              <input type="file">
+            </div> -->
+            <br>
+                  <input type="file" (change)="onFileChanged($event)">
+                  <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+            <br>
+            <div class="form-btn">
+              <button class="submit-btn" (click)="uploadBookDetails()">Add Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

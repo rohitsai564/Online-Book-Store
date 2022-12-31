@@ -1,0 +1,102 @@
+<div class="main-top">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="text-slid-box">
+              <a class="navbar-brand" href="#">
+                <h4>Turn A Page With Us</h4>
+              </a>
+            </div>
+        </div>
+        <div class="right-phone-box">
+            <p>Call US :- <a href="#"> +91 1234567890</a></p>
+        </div>
+        <div class="our-link">
+            <ul>
+                <li><a [routerLink]="['/login',0]" routerLinkActive="home"
+                  [routerLinkActiveOptions]="{exact:true}">
+                    My Account</a></li>
+                <li><a href="#">Our location</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div>
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <a class="navbar-brand"><img src="assets/images/logo3.png" class="logo" alt=""></a> -->
+          <h3>ONLINE BOOK STORE</h3>
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+            <li class="nav-item active"><a class="nav-link" (click)="loadBooks()">Home</a></li>
+         
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="filterBooks('Thriller')">Thriller</a>
+                <a class="dropdown-item" (click)="filterBooks('Fantasy')">Fantasy</a>
+                <a class="dropdown-item" (click)="filterBooks('Horror')">Horror</a>
+                <a class="dropdown-item" (click)="filterBooks('Romance')">Romance</a>
+                <a class="dropdown-item" (click)="filterBooks('Sci-Fi')">Sci-Fi</a>
+              </div>
+            </li>
+
+        
+            <li class="search nav-item"><a class="nav-link"><i class="fa fa-search"></i></a></li>
+              <li class="side-menu nav-item"><a  class="nav-link">
+                <i class="fa fa-shopping-bag"></i>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="row" *ngFor="let book of actualSet; let i = index">
+        <div class="col" *ngFor="let b of actualSet[i]">
+
+          <div class="card" style="width: 20rem;">
+            <img src="data:image/jpeg;base64, {{b.imgBytes}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{b.title}}</h5>
+              <h6>
+                {{b.price | currency: 'INR'}}
+             </h6>
+             <h6>Number of Copies : {{b.no_copies}}</h6>
+             <div class="option_container" style="width: 230px;">
+              <!-- <div class="options">
+                <a class="option1 btn btn-outline-info btn-rounded" (click)="showBookDetails(b.bookId, 0)">
+                  View Details
+                </a>
+                <a class="option2 btn btn-outline-secondary btn-rounded" style="margin-left: 4%" (click)="goToCart(b.bookId, 0)">
+                  Buy Now
+                </a>
+              </div> -->
+            </div>
+          
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

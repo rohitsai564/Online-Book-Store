@@ -1,0 +1,142 @@
+<div class="main-top">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="text-slid-box">
+              <a class="navbar-brand" href="#">
+                <h4>Turn A Page With Us</h4>
+              </a>
+            </div>
+        </div>
+        <div class="right-phone-box">
+            <p>Call US :- <a href="#"> +91 1234567890</a></p>
+        </div>
+        <div class="our-link">
+            <ul>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button"
+                    data-toggle="dropdown" aria-expanded="false">
+                    My Account
+                  </a>
+                  <div class="dropdown-menu" style="background-color: black;">
+                    <a class="dropdown-item">Profile</a>
+                    <a class="dropdown-item">Sign Out</a>
+                  </div>
+                </li>
+                <li><a href="#">Our location</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div>
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <a class="navbar-brand"><img src="assets/images/logo3.png" class="logo" alt=""></a> -->
+
+          <h3>ONLINE BOOK STORE</h3>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+            <li class="nav-item active"><a class="nav-link" (click)="goHome()">Home</a></li>
+            <li class="nav-item"><a class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <!-- <div class="dropdown-menu">
+                <a class="dropdown-item">Thriller</a>
+                <a class="dropdown-item">Fantasy</a>
+                <a class="dropdown-item">Horror</a>
+                <a class="dropdown-item">Romance</a>
+                <a class="dropdown-item">Sci-Fi</a>
+              </div> -->
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link ropdown-toggle" href="#" role="button"
+              data-toggle="dropdown" aria-expanded="false" (click)="goToOrders()">My Orders</a>
+              <!-- <div class="dropdown-menu">
+                <a class="dropdown-item">Previous Orders</a>
+                <a class="dropdown-item">Current Orders</a>
+              </div> -->
+            </li>
+            <li class="search nav-item"><a class="nav-link"><i class="fa fa-search"></i></a></li>
+            <li class="side-menu nav-item">
+              <a  class="nav-link">
+                <i class="fa fa-shopping-bag"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<div class="container" style="max-width: 687px;">
+  <div class="card">
+    <div class="card-header" style="background-color: #ff865a; text-align: center;">
+      <h4>Order Details</h4>
+    </div>
+    <div class="card-body">
+      <div class="card-title">
+        <h5>Item Details</h5>
+      </div>
+      <div class="row" style="margin-bottom: -12%;">
+        <div class="col-md-6">
+          <img src="assets/books/na.png" style="height: 62%;">
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Title: <span>{{book.title}}</span></li>
+            <li class="list-group-item">Author: <span>{{book.author}}</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-md-6">
+          <div>
+            <h6>Order Status: <span>{{order.orderStatus}}</span></h6>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">Order #:      <span>{{order.orderId}}</span></li>
+            <li class="list-group-item">Order Date:   <span>{{order.orderDate}}</span></li>
+            <li class="list-group-item">Book Price:   <span>{{book.price}}</span></li>
+            <li class="list-group-item">Quantity:     <span>{{order.quantity}}</span></li>
+            <li class="list-group-item">Total Amount: <span>{{order.amount}}</span></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div>
+            <h6>Shipment</h6>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              Estimated arrival: <span>{{order.deliveryDate}}</span>
+            </li>
+          </ul>
+          <div *ngIf="isVisible">
+            <button class="btn btn-danger float-right" style="margin-top: 17%;"
+              [ngClass] = "getClassOf(order.orderStatus, order.orderDate)"
+              (click)="cancelOrder()">Cancel Order</button>
+          </div>
+          <div *ngIf="!isVisible">
+            <span><button class="btn btn-success float-left" style="margin-top: 17%;">Accept Order</button></span>
+            <span><button class="btn btn-danger float-right" style="margin-top: 17%;">Reject Order</button></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,52 @@
+.main-top{
+  background: #010101;
+  padding: 10px 0px;
+}
+
+.main-top h4 {
+  color: white;
+}
+
+.right-phone-box{
+  float: right;
+  margin-left: 10px;
+  /* margin-top: 1%; */
+}
+.right-phone-box p{
+  margin: 0px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 30px;
+}
+.right-phone-box p a{
+  color: #ffffff;
+}
+.right-phone-box p a:hover{
+  color: #d33b33;
+}
+
+.our-link{
+  float: right;
+  /* margin-top: 1%; */
+}
+.our-link ul li{
+  display: inline-block;
+  border-right: 1px solid #ffffff;
+  padding: 0px 10px;
+  line-height: 14px;
+}
+.our-link ul{
+  line-height: 30px;
+}
+.our-link ul li a{
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.our-link ul li a:hover{
+  color: #d33b33;
+}
+.our-link ul li:last-child{
+  border: none;
+}

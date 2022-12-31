@@ -1,0 +1,120 @@
+<div class="main-top">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="text-slid-box">
+              <a class="navbar-brand" href="#">
+                <h4>Turn A Page With Us</h4>
+              </a>
+            </div>
+        </div>
+        <div class="right-phone-box">
+            <p>Call US :- <a href="#"> +91 1234567890</a></p>
+        </div>
+        <div class="our-link">
+            <ul>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                  data-toggle="dropdown" aria-expanded="false">
+                  My Account
+                </a>
+                <div class="dropdown-menu" style="background-color: black;">
+                  <a class="dropdown-item" (click)="showProfileDetails()">Profile</a>
+                  <a class="dropdown-item" (click)="logout()" >Sign Out</a>
+                </div>
+              </li>
+                <li><a href="#">Our location</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div>
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <a class="navbar-brand"><img src="assets/images/logo3.png" class="logo" alt=""></a> -->
+          <h3>ONLINE BOOK STORE</h3>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+            <li class="nav-item active"><a class="nav-link"(click)="goHome()">Home</a></li>
+            <li class="nav-item"><a class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" >Thriller</a>
+                <a class="dropdown-item" >Fantasy</a>
+                <a class="dropdown-item" >Horror</a>
+                <a class="dropdown-item" >Romance</a>
+                <a class="dropdown-item">Sci-Fi</a>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link">Our Service</a></li>
+            <li class="nav-item"><a class="nav-link">Contact Us</a></li>
+            <li class="search nav-item"><a class="nav-link"><i class="fa fa-search"></i></a></li>
+            <li class="side-menu nav-item">
+              <a  class="nav-link">
+                <i class="fa fa-shopping-bag"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<div class="small-container cart-page">
+  <table>
+    <tr>
+      <th>Book Title</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+    <tr *ngIf="book">
+      <td>
+        <div class="cart-info">
+          <img src="data:image/jpeg;base64, {{book.imgBytes}}" alt="Book" />
+          <div>
+            <p>{{book.title}}</p>
+            <small>{{book.author}}</small> <br />
+            <a>Remove</a>
+          </div>
+        </div>
+      </td>
+      <td>{{book.price | currency:'INR'}}</td>
+      <td><input type="number" [(ngModel)]='qty'/></td>
+      <td>{{book.price * qty | currency: 'INR'}}</td>
+    </tr>
+  </table>
+  <div class="total-price">
+    <table>
+      <tr>
+        <td>Subtotal</td>
+        <td>{{book.price * qty | currency: 'INR'}}</td>
+      </tr>
+      <tr>
+        <td>Discount</td>
+        <td>{{book.price * qty * 0.1 | currency: 'INR'}}</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>{{(book.price * qty) - (book.price * qty * 0.1) | currency: 'INR'}}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <button class="btn btn-primary px-3" id="confirm" (click)="placeOrder()">Place Order</button>
+  </div>
+</div>

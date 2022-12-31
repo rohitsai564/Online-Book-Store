@@ -1,0 +1,34 @@
+.card {
+  width: 25rem;
+  height: 27rem;
+}
+
+.td{
+  /* border: 2px solid #babec2; */
+  font-size: medium;
+  /* padding-top: 1%;
+  padding-bottom: 5%; */
+  font-weight: bold;
+  cursor: pointer;
+  width: 48%;
+  color:black;
+  overflow-wrap: break-word;
+}
+
+.td-1{
+  /* border: 2px solid #babec2; */
+  font-size: medium;
+  /* padding-top: 1%;
+  padding-bottom: 5%; */
+  font-weight: bold;
+  cursor: pointer;
+  width: 45%;
+  color:black;
+  overflow-wrap: break-word;
+}
+
+.h3-style{
+  background-color: ghostwhite;
+  text-align: center;
+  color: indianred;
+}

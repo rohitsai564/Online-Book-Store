@@ -1,0 +1,126 @@
+<div class="main-top">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="text-slid-box">
+              <a class="navbar-brand" href="#">
+                <h4>Turn A Page With Us</h4>
+              </a>
+            </div>
+        </div>
+        <div class="right-phone-box">
+            <p>Call US :- <a href="#"> +91 1234567890</a></p>
+        </div>
+        <div class="our-link">
+            <ul>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button"
+                    data-toggle="dropdown" aria-expanded="false">
+                    My Account
+                  </a>
+                  <div class="dropdown-menu" style="background-color: black;">
+                    <a class="dropdown-item">Profile</a>
+                    <a class="dropdown-item">Sign Out</a>
+                  </div>
+                </li>
+                <li><a href="#">Our location</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div>
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand"><img src="assets/images/logo3.png" class="logo" alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+            <li class="nav-item active"><a class="nav-link" (click)="goHome()">Home</a></li>
+            <li class="nav-item"><a class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item">Thriller</a>
+                <a class="dropdown-item">Fantasy</a>
+                <a class="dropdown-item">Horror</a>
+                <a class="dropdown-item">Romance</a>
+                <a class="dropdown-item">Sci-Fi</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link ropdown-toggle" href="#" role="button"
+              data-toggle="dropdown" aria-expanded="false">My Orders</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item">Previous Orders</a>
+                <a class="dropdown-item">Current Orders</a>
+              </div>
+            </li>
+            <li class="search nav-item"><a class="nav-link"><i class="fa fa-search"></i></a></li>
+            <li class="side-menu nav-item">
+              <a  class="nav-link">
+                <i class="fa fa-shopping-bag"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<div class="container bootdey">
+  <div class="panel panel-default panel-order">
+    <div class="panel-heading">
+      <strong>Order history</strong>
+      <div class="btn-group float-right">
+        <div class="btn-group" id="menu">
+          <button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"
+          style="margin-top: -4%;"><b>Filter history</b> <i class="fa fa-filter"></i></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a class="nav-link" (click)="filterByStatus(2)">Approved orders</a></li>
+            <li><a class="nav-link" (click)="filterByStatus(0)">Pending orders</a></li>
+            <li><a class="nav-link" (click)="filterByStatus(1)">Cancelled Orders</a></li>
+            <li><a class="nav-link" (click)="filterByStatus(3)">Rejected Orders</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a class="nav-link" (click)="loadCurrentOrders()">Today's Orders</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="float-right">
+        <div >
+          <span (click)="showByDate()"><b>Filter by Date</b></span> <span><input type="date" name="date" [(ngModel)]="dateString"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-body" style="width: 99%;">
+      <div class="row" *ngFor="let order of orders; let i = index">
+        <div class="col-md-1"><img src="assets/books/na.png" class="media-object img-thumbnail" /></div>
+          <div class="col-md-11">
+            <div class="row">
+              <div class="col-md-12" (click)="showOrderDetails(order.orderId)">
+                <div class="pull-right"><label class="label label-danger">{{order.orderStatus}}</label></div>
+                  <span><strong>Book Title: </strong></span> <span class="label label-info">{{titles[i]}}</span><br />
+                  Quantity : {{order.quantity}}, Total Amount: {{order.amount}} <br />
+                </div>
+                <div class="col-md-12" style="font-size: large;">order made on: {{order.orderDate}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

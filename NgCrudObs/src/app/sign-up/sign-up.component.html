@@ -1,0 +1,89 @@
+
+
+    <div class="container-fluid px-4 px-md-4 py-5 mx-auto">
+      <div class="d-flex justify-content-between align" style="display: flex;">
+          <div class="card border-0 rounded-0 mb-5" style="margin-right:9%">
+              <h3 class="mb-2" style="color: darkblue;">Register As Customer</h3>
+              <small>Enter your details below</small>
+
+              <form [formGroup]="signUpForm" (submit)="onSignUp()">     
+                <div class="row">
+                  <div class="col-md-0.5"></div>
+                   <div class="col-md-7 signup">
+                     
+                     <!-- <div class="card">
+                       <h5 class="card-header">Sign Up - Request Access</h5>
+                       <div class="card-body"> -->
+                         <div class="mb-3 alert alert-primary" *ngIf="msg">
+                             {{msg}}
+                         </div>
+                         <div class="mb-3">
+                           <label for="exampleFormControlInput1" class="form-label">Name</label>
+                           <input type="text" class="form-control" placeholder="Enter your name"
+                           formControlName="customerName">
+                           <span class="error_msg" *ngIf="signUpForm.controls['customerName'].touched &&
+                                       signUpForm.controls['customerName'].invalid">
+                             <span *ngIf="signUpForm.controls['customerName'].errors['required']">Name is required</span>
+                             <span *ngIf="signUpForm.controls['customererName'].errors['pattern']">Valid name is required</span>
+                           </span>
+                         </div>
+               
+                         <div class="mb-3">
+                           <label for="exampleFormControlInput1" class="form-label">Mobile No</label>
+                           <input type="tel" class="form-control" placeholder="Enter your Mobile No"
+                           formControlName="phone" pattern="[0-9]{10}">
+                           <span class="error_msg" *ngIf="signUpForm.controls['phone'].touched &&
+                                       signUpForm.controls['phone'].invalid">
+                             <span *ngIf="signUpForm.controls['phone'].errors['required']">Field is required</span>
+                             <span *ngIf="signUpForm.controls['phone'].errors['pattern']">Please enter 10 digits</span>
+                           </span>
+                         </div>
+               
+                         <div class="mb-3">
+                           <label for="exampleFormControlInput1" class="form-label">Address</label>
+                           <input type="text" class="form-control" placeholder="H.No, Land Mark, Pincode" formControlName="address">
+                           <span class="error_msg" *ngIf="signUpForm.controls['address'].touched">
+                              <!-- <span *ngIf="signUpForm.controls['address'].errors['required']">Field is required</span> -->
+                           </span>
+                         </div>
+               
+                         <div class="mb-3">
+                           <label for="exampleFormControlInput1" class="form-label">Email/Username</label>
+                           <input type="email" class="form-control"  placeholder="name@example.com"
+                           formControlName="username">
+                           <span class="error_msg" *ngIf="signUpForm.controls['username'].touched &&
+                             signUpForm.controls['username'].invalid">
+                             <span *ngIf="signUpForm.controls['username'].errors['required']">Username is required</span>
+                             <span *ngIf="signUpForm.controls['username'].errors['pattern']">please enter valid email</span>
+                           </span>
+                         </div>
+                         <div class="mb-3">
+                           <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                           <input type="password" class="form-control" formControlName="password">
+               
+                           <span class="error_msg" *ngIf="signUpForm.controls['password'].touched &&
+                             signUpForm.controls['password'].invalid">
+                             <span *ngIf="signUpForm.controls['password'].errors['required']">Password is required</span>
+                             <span *ngIf="signUpForm.controls['password'].errors['pattern']">Password can have alphabets, digits @ _ #</span>
+                             <span *ngIf="signUpForm.controls['password'].errors['minlength']">Password should be min 5 chars</span>
+                             <span *ngIf="signUpForm.controls['password'].errors['maxlength']">Password should be max 15 chars</span>
+                           </span>
+                         </div>
+                         <div class="mb-3">
+                           <label for="exampleFormControlTextarea1" class="form-label">Re-Password</label>
+                           <input type="password" class="form-control" formControlName="repassword">
+                         </div>
+                         <div class="mb-4">
+                             <input type="submit" class="btn btn-primary" value="Sign Up" [disabled]="!signUpForm.valid">
+                         <!-- </div>
+                         
+                       </div> -->
+                     </div>
+                   </div>
+                   <div class="col-md-4"></div>
+                 </div>
+               </form>
+
+          </div>
+      </div>
+      </div>

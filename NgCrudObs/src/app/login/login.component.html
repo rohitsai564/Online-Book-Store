@@ -1,0 +1,158 @@
+<div class="main-top">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="text-slid-box">
+              <a class="navbar-brand" href="#">
+                <h4>Turn A Page With Us</h4>
+              </a>
+            </div>
+        </div>
+        <div class="right-phone-box">
+            <p>Call US :- <a href="#"> +91 1234567890</a></p>
+        </div>
+        <div class="our-link">
+            <ul>
+                <li><a style="color:white;" enabled="false">My Account</a></li>
+                <li><a href="#">Our location</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div>
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand"><img src="assets/images/logo3.png" class="logo" alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+            <!-- <li class="nav-item active"><a class="nav-link" (click)="goHome()">Home</a></li> -->
+            <li class="nav-item"><a class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Thriller</a>
+                <a class="dropdown-item" href="#">Fantasy</a>
+                <a class="dropdown-item" href="#">Horror</a>
+                <a class="dropdown-item" href="#">Romance</a>
+                <a class="dropdown-item" href="#">Sci-Fi</a>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link">Our Service</a></li>
+            <li class="nav-item"><a class="nav-link">Contact Us</a></li>
+            <li class="search nav-item"><a href="#" class="nav-link"><i class="fa fa-search"></i></a></li>
+              <li class="side-menu nav-item"><a href="#" class="nav-link">
+                <i class="fa fa-shopping-bag"></i>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<!-- <div class="container-fluid px-4 px-md-4 py-5 mx-auto">
+  <div class="d-flex justify-content-between align" style="display: flex;">
+    <div class="card p-0 border-0 rounded-0 mb-5" style="margin-left: 8%;">
+        <div class="card border-0 rounded-0 card0">
+            <h3 class="mb-0" style="color: darkblue;"><strong>Welcome To THE PAGE AGE</strong></h3>
+            <p>Please login with your account</p>
+            <div>
+              <span style="margin-right: 43px;"><label class="font-weight-bold" for="user">Email</label></span>
+              <input type="email" name="user" class="mb-4" placeholder="abc@xyz.com" [(ngModel)]="username">
+            </div>
+            <div>
+              <span style="margin-right: 15px;"><label class="font-weight-bold ">Password  </label></span>
+              <input type="password" name="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" [(ngModel)]="pass">
+              <p><a href="#" class="text-sm ml-auto text-dim">Forgot Password?</a></p>
+            </div>
+            <div class="row justify-content-center mt-4">
+              <button type="submit" class="btn btn-yellow px-5" (click)="login()" >Login</button>
+            </div>
+        </div> <img src="../../assets/images/mbr-1920x1080.jpg" class="mt-auto" style="width: 99%;">
+    </div>
+    <div class="card border-0 rounded-0 mb-5" style="margin-right:9%">
+      <h3 class="mb-2" style="color: darkblue;">Register As Customer</h3>
+      <small>Enter your details below</small>
+      <form id="register-form">
+        <div class="form-group">
+          <span style="margin-right: 64px;"><label for="fname" class="font-weight-bold">First Name</label></span>
+          <input type="text" name="fname" id="fname" placeholder="John" required [(ngModel)]="customer.firstName"/>
+        </div>
+        <div class="form-group">
+          <span style="margin-right: 64px;"><label for="lname" class="font-weight-bold">Last Name</label></span>
+          <input type="text" name="lname" id="lname" placeholder="Doe" required [(ngModel)]="customer.lastName"/>
+        </div>
+        <div class="form-group">
+          <span style="margin-right: 68px;"><label for="phone" class="font-weight-bold">Contact #</label></span>
+          <input type="tel" name="phone" id="phone" placeholder="1234567890" required [(ngModel)]="customer.phone"/>
+        </div>
+       
+        <div class="form-group">
+          <span style="margin-right: 49px;"><label for="addr" class="font-weight-bold">Full Address</label></span>
+          <input type="text" name="addr" id="addr" placeholder="Door No. etc" [(ngModel)]="customer.address"
+          required/>
+        </div>
+        <div class="form-group">
+          <span style="margin-right: 67px;"><label for="password" class="font-weight-bold">Password</label></span>
+          <input type="password" name="password" id="password" placeholder="Password" [(ngModel)]="customer.passcode"
+          required/>
+        </div>
+        <div class="form-group">
+          <span style="margin-right: 10px;"><label for="re_pass" class="font-weight-bold">Confirm Password</label></span>
+          <input type="password" name="repass" id="re_pass" placeholder="Repeat your password" [(ngModel)]="confirm"
+          required/>
+        </div>
+      </form>
+      <div class="row px-3 mt-5">
+        <button type="button" class="btn btn-yellow px-3 mr-3" (click)="registerCustomer()">Register</button>
+      </div>
+  
+    </div>
+</div> -->
+
+
+<div class="login-section">
+  <form [formGroup]="loginForm" (submit)="onLogin()">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4 login">
+      <div class="card">
+        <h5 class="card-header">Login</h5>
+        <div class="card-body">
+          <div class="mb-3 alert alert-primary" *ngIf="msg">
+            {{msg}}
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email/Username</label>
+            <input type="email" class="form-control" formControlName="username" >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+          </div>
+          <div class="mb-3">
+              <input type="submit" class="btn btn-primary" value="Login" [disabled]="!loginForm.valid">
+          </div>
+          <div class="mb-3">
+            Not Registered? <a routerLink="/sign-up">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
