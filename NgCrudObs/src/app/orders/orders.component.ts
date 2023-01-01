@@ -19,6 +19,7 @@ export class OrdersComponent implements OnInit {
 
   titles: string[] = [];
 
+img:any = [];
   dateString = '';
 
   constructor(private orderService: OrdersService, private customerService: CustomerService,
@@ -39,6 +40,7 @@ export class OrdersComponent implements OnInit {
         .subscribe(ele => {
           console.log(ele);
           this.titles.push(ele.title);
+          this.img.push(ele.imgBytes)
         });
       }
     }, error => console.log(error));
@@ -74,11 +76,11 @@ export class OrdersComponent implements OnInit {
   }
 
   goHome() {
-    if(this.id > 200 && this.id < 301) {
+    if(this.id == 82) {
       this.router.navigate(['/adminDash', this.id]);
     }
 
-    if(this.id > 100 && this.id < 201) {
+    if(this.id != 82) {
       this.router.navigate(['/cDash', this.id]);
     }
   }

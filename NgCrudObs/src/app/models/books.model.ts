@@ -6,6 +6,5 @@ export class Books {
   category: string;
   price: number;
   availability: boolean;
-  imgBytes: string;
-  
+  imgBytes: string; 
 }

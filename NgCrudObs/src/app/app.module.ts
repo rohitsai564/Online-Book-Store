@@ -21,7 +21,6 @@ import { AddbookComponent } from './addbook/addbook.component';
 
 import { EditbookComponent } from './editbook/editbook.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
@@ -41,7 +40,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AddbookComponent,
     EditbookComponent,
     OrderdetailsComponent,
-    AdminLoginComponent,
     SignUpComponent
   ],
   imports: [

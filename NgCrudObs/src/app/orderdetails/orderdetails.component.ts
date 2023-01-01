@@ -65,11 +65,11 @@ export class OrderdetailsComponent implements OnInit {
   }
 
   goHome() {
-    if(this.val > 200 && this.val < 301) {
+    if(this.val == 82) {
       this.router.navigate(['/adminDash', this.val]);
     }
 
-    if(this.val > 100 && this.val < 201) {
+    if(this.val!=82) {
       this.router.navigate(['/cDash', this.val]);
     }
   }

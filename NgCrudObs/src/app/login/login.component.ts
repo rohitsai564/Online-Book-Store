@@ -117,8 +117,8 @@ export class LoginComponent implements OnInit {
         this.loginService.user$.next(this.user);
         let id = this.user.id;
          /* Check the role */
-         if(this.user.role == 'ADMIN'){
-            this.router.navigateByUrl('/adminDash/0');
+         if(this.user.id == 82){
+            this.router.navigate(['/adminDash', id]);
          }
          else
          

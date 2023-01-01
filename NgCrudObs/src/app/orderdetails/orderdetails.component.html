@@ -94,7 +94,7 @@
       </div>
       <div class="row" style="margin-bottom: -12%;">
         <div class="col-md-6">
-          <img src="assets/books/na.png" style="height: 62%;">
+          <img src="data:image/jpeg;base64, {{book.imgBytes}}" style="height: 62%;">
         </div>
         <div class="col-md-6">
           <ul class="list-group list-group-flush">
@@ -105,9 +105,7 @@
       </div>
       <div class="row" >
         <div class="col-md-6">
-          <div>
-            <h6>Order Status: <span>{{order.orderStatus}}</span></h6>
-          </div>
+         
           <ul class="list-group">
             <li class="list-group-item">Order #:      <span>{{order.orderId}}</span></li>
             <li class="list-group-item">Order Date:   <span>{{order.orderDate}}</span></li>
@@ -130,10 +128,7 @@
               [ngClass] = "getClassOf(order.orderStatus, order.orderDate)"
               (click)="cancelOrder()">Cancel Order</button>
           </div>
-          <div *ngIf="!isVisible">
-            <span><button class="btn btn-success float-left" style="margin-top: 17%;">Accept Order</button></span>
-            <span><button class="btn btn-danger float-right" style="margin-top: 17%;">Reject Order</button></span>
-          </div>
+         
         </div>
       </div>
     </div>
